@@ -1,7 +1,7 @@
 import React from 'react'
 import css from './Hero.module.scss'
 import { motion } from "framer-motion";
-import { fadeIn, staggerContainer } from '../../utils/motion';
+import { fadeIn, slideIn, staggerContainer } from '../../utils/motion';
 
 const Hero = () => {
   return (
@@ -31,26 +31,38 @@ const Hero = () => {
         </div>
 
         {/* person image */}
-        <div className={css.person}>
-          <img src="./person.png" alt="" />
-        </div>
+        <motion.div 
+          variants={fadeIn("up", "tween", 0.3, 1)}
+          className={css.person}
+          >
+          <motion.img
+          variants={slideIn("up", "tween", 0.5, 1.3)}
+          src="./person.png" alt="" />
+        </motion.div>
 
         {/* email */}
 
         {/* lower elements */}
         <div className={css.lowerElements}>
-          <div className={css.experience}>
+          <motion.div 
+            variants={fadeIn("right", "tween", 0.3, 1)}
+            className={css.experience}
+            >
             <div className="primaryText">10</div>
             <div className="secondaryText">
               <div>Years</div>
               <div>Experience</div>
             </div>
-          </div>
-          <div className={css.certificate}>
+          </motion.div>
+
+          <motion.div 
+            variants={fadeIn("right", "tween", 0.5, 1)}
+            className={css.certificate}
+            >
             <img src="./certificate.png" alt="" />
             <span>CERTIFIED PROFESSIONAL</span>
             <span>UI/UX DESIGNER</span>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
     </section> 
