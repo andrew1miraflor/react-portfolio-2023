@@ -4,30 +4,30 @@ import css from './Expertise.module.scss'
 const Expertise = () => {
     return (
         <section className={css.wrapper}>
-            <div 
-                className={` paddings yPaddings flexCenter innerWidth ${css.container}`}
-                >
+            <div className={` paddings yPaddings flexCenter innerWidth ${css.container}`} >
 
                 <div className={css.leftSide}>
                     {projectExperience.map((exp, i) => {
-                            return (
+                        return (
                             <div className={css.exp} key={i}>
                                 <div className="flexCenter">
-                                    <exp.icon size={25} color="white" />
+                                    {/* <exp.icon size={25} color="white" /> */}
                                 </div>
 
                                 <div>
                                     <span>{exp.name}</span>
-                                    <span>{exp.projects}</span>
+                                    <span className="secondaryText">{exp.projects} Projects</span>
                                 </div>
                             </div>
                         );
                     })}
-                     </div>
+                </div>
 
                 <div className={css.rightSide}>
+
+                    right side 
                 </div>
-            </div>
+                </div>
         </section>
     )
 }
