@@ -1,88 +1,113 @@
-@import '../../styles/contants.scss';
+@import '../../styles/constants.scss';
 
-.wrapper {
-    overflow: hidden;
+.container {
+    position: relative;
+    z-index: 1;
 
+    .upperElements {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
 
-    .container {
-        position: relative;
-        z-index: 1;
+    .lowerElements {
 
-        .upperElements {
-            @media (max-width: $sm) {
-                justify-content: center;
-                text-align: center;
-                gap: 2rem;
-            }
+        @media (max-width: $sm),
+        (max-width: $md) {
+            margin-top: 4rem;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        margin-top: 12rem;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .experience {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
+            gap: 1rem;
+            width: 50%;
+
+            @media (max-width: $sm),
+            (max-width: $md) {
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+            }
+
+            >:nth-child(2) {
+                line-height: 25px;
+            }
         }
 
-        .lowerElements {
-            @media (max-width: $sm), (max-width: $md) {
-                margin-top: 4rem;
-                gap: 2rem;
-                justify-content: center;
-            }
-            margin-top: 12rem;
+        .certificate {
             display: flex;
-            justify-content: space-around;
-            .experience {
-                display: flex;
-                align-items: center;
-                gap: 1rem;
-                >:nth-child(2) {
-                    line-height: 25px;
-                }
-            }
+            flex-direction: column;
+            align-items: center;
 
-            .certificate {
-                display: flex; 
-                flex-direction: column;
-                align-items: center;
-
-                img {
-                    margin-bottom: 1rem;
-                    width: 3.5rem;
-                }
-
+            img {
+                margin-bottom: 1rem;
+                width: 3.5rem;
             }
         }
+    }
 
-        .person{
-            @media (max-width: $sm), (max-width: $md) {
-                position: relative;
-                left: 0;
-                background-size: 20rem;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background-position: bottom;
+    .person {
+
+        @media (max-width: $sm), 
+        (max-width: $md) {
+            position: relative;
+            left: 0;
+            display: flex;
+            height: 25vh;
+            width: 25vh;
+            margin: 8vh auto;
+            align-items: center;
+            justify-content: center;
+            background-position: bottom;
+        }
+
+        position: absolute;
+        display: block;
+        height: 66%;
+        width: 33%;
+        bottom: -2rem;
+        margin: auto;
+        background-image: url('../solar-flare.gif');
+        background-repeat: no-repeat;
+        left: 33%;
+        border-radius: 50%;
+        top: 25%;
+        border-radius: 50%;
+        background-color: #fff;
+        box-shadow: 0 0 60px 30px #fff,
+        0 0 100px 60px #f0f,
+        0 0 140px 90px #0ff;
+        box-shadow: 0 0 0.2rem 0.1rem #fff, 0 0 0.3rem 0.2rem #f0f, 0 0 0.4rem 0.3rem #0ff;
+
+        img {
+
+            @media (max-width: $sm),
+            (max-width: $md) {
+                width: 23rem;
             }
+
+            margin-bottom: -5px;
+            max-width: 75%;
+            max-height: 75%;
+            display: block;
+            border-radius: 50%;
+            margin: 0;
             position: absolute;
-            bottom: -2rem; 
-            margin: auto; 
-            background-image: url('../splash.png');
-            background-repeat: no-repeat;
-            background-size: 23rem; 
-            left: 33%;
-
-            img{
-                @media (max-width: $sm) {
-                    width: 23rem;
-                }
-                margin-bottom: -5x;
-                
-            }
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
         }
 
     }
-
-
-
-
-
-
 }
